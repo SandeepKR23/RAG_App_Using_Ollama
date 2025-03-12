@@ -11,7 +11,7 @@ def ask_ollama_question(question):
 
 rag = RAGSystem()
 lvs = LocalVectorStore()
-lvs.load(folder_path="test")
+lvs.load(folder_path="corona")
 
 rag.set_vector_db(lvs.vector_store)
 
@@ -20,7 +20,7 @@ st.title("LangChain Chatbot")
 
 model_name = st.sidebar.selectbox(
     "Select Language Model",
-    ("phi3.5", "llama3.1:8b", "phi3:3.8b", "gemma2:2b", "qwen2:0.5b", "qwen2:1.5b", "smollm:135m", "smollm:360m", "smollm:1.7b")
+    ("phi3.5","deepseek-r1:7b", "llama3.2", "llama3.1:8b", "phi3:3.8b", "gemma2:2b", "qwen2:0.5b", "qwen2:1.5b", "smollm:135m", "smollm:360m", "smollm:1.7b")
 )
 
 question = st.text_input("Enter your question:")
